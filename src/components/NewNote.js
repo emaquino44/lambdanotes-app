@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const apiUrl = process.env.REACT_APP_API;
+const URL = 'https://dakine-lambdanotes-api.herokuapp.com/api/notes';
 
 
 class NewNote extends Component {
@@ -24,7 +24,7 @@ class NewNote extends Component {
           title: this.state.title,
           content: this.state.content
         }
-        axios.post(apiUrl, newNote)
+        axios.post(URL, newNote)
           .then(response => {
             console.log(response);
             console.log(response.data);

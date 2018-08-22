@@ -23,9 +23,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const apiUrl = process.env.REACT_APP_API;
     axios
-    .get(apiUrl)
+    .get('https://dakine-lambdanotes-api.herokuapp.com/notes')
     .then(response => {
       console.log(response);
       this.setState({notes: response.data});

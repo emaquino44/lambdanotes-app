@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const apiUrl = process.env.REACT_APP_API;
+const URL = 'https://dakine-lambdanotes-api.herokuapp.com/notes/';
 
 
 class EditNote extends Component {
@@ -17,7 +17,7 @@ class EditNote extends Component {
 
 componentDidMount () {
     const id = Number(this.props.match.params.id);
-        axios.get(apiUrl)
+        axios.get(URL)
         .then(response => {
             console.log(response);
             console.log(response.data);
@@ -45,7 +45,7 @@ componentDidMount () {
             title: this.state.title,
             content: this.state.content
         }
-        axios.put(`${apiUrl}${this.state.id}`, updatedNote)
+        axios.put(`${URL}${this.state.id}`, updatedNote)
         .then(response => {
             console.log(response);
             console.log(response.data);

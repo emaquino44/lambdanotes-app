@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import logo from './lambda-logo.png';
+import { Button } from 'reactstrap';
 
 class Register extends React.Component {
     state = {
@@ -31,12 +33,25 @@ class Register extends React.Component {
 
     render() {
     return (
-        <div>
-            <h3>Register A New User</h3>
-            <Link to='/'><button>Back to Home</button></Link>
-            <form>
-                <div>
-                  <input
+        <div className="register-containerx">
+            <div className="register-buttonm">
+            <div>
+            <Link to='/'><Button>Back</Button></Link>
+            </div>
+             <div className="register-button">
+                <p className="register-login-context">Already have an acct?</p>
+             </div>
+             <div>
+                <Link to="/login"><p className="register-login-button" >Log In</p></Link>
+            </div>
+            </div>
+      <div className="register-container">
+         <img className="register-logo-img" src={logo} />
+            <h3 className="register-header">Sign Up Today!</h3>
+            </div>
+            <form className="register-container">
+                <div className="register-form">
+                  <input className="register-form-namebox1"
                     type='text'
                     name='name'
                     placeholder='Enter a new name'
@@ -44,7 +59,7 @@ class Register extends React.Component {
                     />
                 </div>
                 <div>
-                  <input
+                  <input className="register-form-namebox1"
                     type='password'
                     name='password'
                     placeholder='Create a password'
@@ -52,16 +67,18 @@ class Register extends React.Component {
                     />
                 </div>
                 <div>
-                    <input
+                    <input className="register-form-namebox1"
                     type='text'
                     name='email'
-                    placeholder='email'
+                    placeholder='Add Your Email'
                     onChange={this.inputChangeHandler.bind(this, 'user')}
                     />
                 </div>
                 <div>
-                    <Link to="/login"><button onClick={this.newUser}>Register</button></Link>
+
+                    <Link to="/login"><Button className="register-button1" onClick={this.newUser}>Sign Up</Button></Link>
                 </div>
+
             </form>
         </div>
     )}

@@ -3,6 +3,8 @@ import {Link } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 import logo from './lambda-logo.png';
+import { Button } from 'reactstrap';
+
 
 class Login extends Component {
         state = {
@@ -39,8 +41,11 @@ class Login extends Component {
   render() {
   	return(
   	       <div className="login-container">
-           <img className="homepage-logo-img" src={logo} />
-  	       	<h1 className="login-header">Login</h1>
+           <div>
+            <Link to='/'><Button className="login-button-back">Back</Button></Link>
+            </div>
+           <img className="login-logo-img" src={logo} />
+  	       	<h1 className="login-header">Log in to Your Account</h1>
             <div className="form-container">
   	       	<form lassName="login-form-container" onSubmit={this.submitHandler}>
                 <div className="login-form">
@@ -48,6 +53,7 @@ class Login extends Component {
                     name='name'
                     value={this.state.name}
                     onChange={this.inputChangeHandler}
+                    placeholder='Name'
                     type="text"
                     />
                 </div>
@@ -56,15 +62,21 @@ class Login extends Component {
                     name='password'
                     value={this.state.password}
                     onChange={this.inputChangeHandler}
+                    placeholder='Password'
                     type="text"
                    />
                 </div>
-
                 <div>
-
-                    <Link to="/notes" className="login-button" ><button type="submit"> Login</button></Link>
-
+                    <Link to="/notes" ><Button className="login-button" type="submit"> Login</Button></Link>
                 </div>
+            <div className="reglogin-button-container">
+                <div className="register-button">
+                    <p className="register-login-context">New to Lambda Notes?</p>
+                 </div>
+                <div>
+                    <Link to="/register"><p className="register-login-button">Sign Up</p></Link>
+                </div>
+            </div>
 
             </form>
             </div>

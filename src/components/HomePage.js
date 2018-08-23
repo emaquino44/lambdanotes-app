@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import logo from './lambda-logo.png';
-
+import { Button } from 'reactstrap';
 
 const HomePage = () => {
     return (
@@ -12,12 +12,12 @@ const HomePage = () => {
             <p className="homepage-content-a">This is an app that creates short notes where you can store and retrieve when you want them.</p>
 
            <h4 className="homepage-content">Ready to get started? </h4>
-           <p className="homepage-content"> Log in or Create a new account</p>
+
             <div className="home-button">
-                <Link to='/login'><button className="home-login-button">Login</button></Link>
+                <Link to='/login'><button className="home-login-button">Log into your Account</button></Link>
                 </div>
                 <div>
-                <Link to='/register'><button className="home-login-button">Register A New User</button></Link>
+                <Link to='/register'><button className="home-login-button">New to Lambda Notes? Click here</button></Link>
                 </div>
             </div>
         </div>
